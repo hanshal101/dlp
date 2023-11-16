@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Allocations</title>
+    <!-- Add any additional styling or CSS links here -->
+</head>
+<body>
+
+<h2>Teacher Allocations</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Teacher</th>
+            <th>Classroom</th>
+            <th>Date</th>
+            <th>Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for allocation in all_teacher_allocations %}
+            <tr>
+                <td>{{ allocation.teacher }}</td>
+                <td>{{ allocation.classroom }}</td>
+                <td>{{ allocation.date }}</td>
+                <td>{{ allocation.time }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
