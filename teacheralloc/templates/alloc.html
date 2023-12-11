@@ -32,5 +32,11 @@
     </tbody>
 </table>
 
+<form method="post" action="{% url 'fixAllocation' %}">
+    {% csrf_token %}
+    <button type="submit">Mail Teachers</button>
+  </form>
+  
+
 </body>
 </html>

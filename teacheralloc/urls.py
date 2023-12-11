@@ -4,5 +4,5 @@ from . import views
 
 urlpatterns = [
     path('generate-allocations/', views.generate_teacher_allocations, name="generate_teacher_allocations"),
-
+    path('teacherAllocated/',views.fixAllocation,name="fixAllocation"),
 ]

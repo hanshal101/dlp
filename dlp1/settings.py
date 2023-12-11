@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'timetable.apps.TimetableConfig',
     'teacheralloc.apps.TeacherallocConfig',
+    'student_data.apps.StudentDataConfig'
 ]
 
 MIDDLEWARE = [
