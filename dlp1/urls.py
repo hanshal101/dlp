@@ -20,4 +20,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('tt/', include("teacheralloc.urls")),
     path('stdata/',include("student_data.urls")),
+    path('entry/',include("timetable.urls")),
+    path('stalloc/',include("studentAllocation.urls")),
 ]

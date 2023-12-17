@@ -20,3 +20,4 @@ admin.site.register(Subject)
 
 
 admin.site.register(Teachers)
+admin.site.register(YearClass)

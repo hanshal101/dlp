@@ -8,12 +8,13 @@ class Subject(models.Model):
 
 class Class(models.Model):
     name = models.CharField(max_length=50, unique=True)
-
+    capacity = models.IntegerField()
     def __str__(self):
         return self.name
 
 class Year(models.Model):
     year = models.CharField(max_length=2)
+    students = models.IntegerField()
 
     def __str__(self) -> str:
         return self.year
@@ -53,17 +54,7 @@ class Teachers(models.Model):
         return self.teacher_name
     
 
-# class TeacherAllocation(models.Model):
-#     teacher = models.ForeignKey('Teachers', on_delete=models.CASCADE)
-#     classroom = models.ForeignKey('Class', on_delete=models.CASCADE)
-#     date = models.DateField()
-#     time = models.TimeField()
-
-#     def formatted_time(self):
-#         return self.time.strftime('%I:%M %p')
-
-#     def formatted_duration(self):
-#         return f"{self.time()} to {self.time.strftime('%I:%M %p')}"
-    
-#     def __str__(self):
-#         return f"Teacher: {self.teacher.teacher_name}, Class: {self.classroom.name}, Date: {self.date} Time: {self.time}"
+class YearClass(models.Model):
+    yearclass = models.CharField(max_length=3)
+    def __str__(self):
+        return self.yearclass
