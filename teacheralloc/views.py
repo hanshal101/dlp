@@ -6,7 +6,6 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 from .models import FixAllocation, Teachers, TeacherAllocation
 from timetable.models import TimeTableEntry
-import smtplib
 
 @login_required
 @csrf_exempt
@@ -32,8 +31,7 @@ def generate_teacher_allocations(request):
                             time=subject.subjectschedule_set.first().start_time
                         )
                     else:
-                        messages.error(request, "Teachers are insufficient for the required allotment")
-                        return redirect('generate_allocation_form')
+                        return HttpResponse("Teachers are insufficient for the required allotment")
 
         return redirect('http://127.0.0.1:8000/tt/teacherAllocated')
     
