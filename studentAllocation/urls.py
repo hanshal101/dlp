@@ -3,5 +3,6 @@ from django.urls import path
 from . import views 
 
 urlpatterns = [
-    path('alloc/',views.stdAllocation,name="alloc"),
+    path('generate-alloc/',views.stdAllocation,name="generate-alloc"),
+    path('alloc/',views.showStdAllocation,name="showStdAllocation"),
 ]

@@ -1,0 +1,24 @@
+<h2>Student Allocations</h2>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Classroom</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Start RollNo</th>
+            <th>End RollNo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for allocation in all_student_allocations %}
+            <tr>
+                <td>{{ allocation.classroom }}</td>
+                <td>{{ allocation.date }}</td>
+                <td>{{ allocation.time }}</td>
+                <td>{{ allocation.start_rollno }}</td>
+                <td>{{ allocation.end_rollno }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
