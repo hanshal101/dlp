@@ -1,42 +1,208 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teacher Allocations</title>
-    <!-- Add any additional styling or CSS links here -->
-</head>
-<body>
-
-<h2>Teacher Allocations</h2>
-
-<table border="1">
-    <thead>
-        <tr>
-            <th>Teacher</th>
-            <th>Classroom</th>
-            <th>Date</th>
-            <th>Time</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for allocation in all_teacher_allocations %}
-            <tr>
-                <td>{{ allocation.teacher }}</td>
-                <td>{{ allocation.classroom }}</td>
-                <td>{{ allocation.date }}</td>
-                <td>{{ allocation.time }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
-
-<form method="post" action="{% url 'fixAllocation' %}">
-    {% csrf_token %}
-    <button type="submit">Mail Teachers</button>
-  </form>
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Sans-Serif;
+  }
   
-
-</body>
-</html>
+  
+  body {
+    min-height: 100vh;
+    background: url(https://www.kjsieit.in/sims/images/main/back.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    overflow-x: hidden;
+  }
+  
+  
+  table,
+  th,
+  td {
+    padding: 1rem;
+  }
+  
+  
+  main.table {
+    width: 95%; 
+    max-width: 1200px;
+    margin: 20px auto;
+    height: 80vh;
+    background: #fff5;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+    animation: slideDown 1s ease forwards;
+  }
+  
+  .table_header {
+    width: 100%;
+    height: 10%;
+    background-color: #BE3144;
+    color: white;
+    text-align: center;
+    padding: .8rem 1rem;
+  }
+  
+  
+  .table_body {
+    width: 100%;
+    height: 90%;
+    background-color: #fffb;
+    overflow: auto;
+    scrollbar-width: none;
+  }
+  
+  .table_body::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+  
+  
+  tbody tr {
+    transition: background-color 0.3s ease;
+  }
+  
+  tbody tr:hover {
+    background-color: #fff6;
+  }
+  
+  
+  table,
+  th,
+  td {
+    padding: 1.2rem; 
+    font-size: 1em;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  main.table {
+    animation: fade-in 1s ease;
+  }
+  
+  
+  thead th {
+    transition: transform 0.3s ease;
+  }
+  
+  thead th:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    main.table {
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+    .table_body {
+      max-height: 70vh;
+      height: auto;
+    }
+    table,
+    th,
+    td {
+      padding: 0.5rem;
+      font-size: 0.9em;
+    }
+  }
+  .table_body {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .table_container {
+      width: 100%;
+      overflow-x: auto;
+      max-width: 1200px;
+  }
+  
+  table {
+      width: 100%;
+  }
+  
+  @media screen and (min-width: 768px) {
+      .table_body {
+          display: block;
+      }
+  
+      .table_container {
+          display: grid;
+          grid-template-columns: 1fr;
+          justify-items: center;
+      }
+  
+      table {
+          max-width: 100%;
+      }
+  }
+  table {
+      width: 100%;
+      border-collapse: collapse;
+  }
+  
+  thead th,
+  tbody td {
+      padding: 1.2rem; 
+      font-size: 1em;
+      text-align: center; 
+  }
+  tbody tr:hover {
+      background-color: #A9A9A9;
+  }
+  
+  @keyframes slideDown {
+      from {
+          transform: translateY(-100%);
+      }
+      to {
+          transform: translateY(0);
+      }
+  }
+  </style>
+    <body>
+      <main class ="table">
+        <section class="table_header">
+          <h1>Time Table</h1>
+        </section>
+        <section class="table_body">
+          <table>
+            <thead>
+              <tr>
+                <th>Teachers</th>
+                <th>Class</th>
+                <th>Date</th>
+                <th>Time</th>
+              </tr>  
+            </thead>
+            <tbody>
+            {% for allocation in all_teacher_allocations %}
+              <tr>
+                  <td>{{ allocation.teacher }}</td>
+                  <td>{{ allocation.classroom }}</td>
+                  <td>{{ allocation.date }}</td>
+                  <td>{{ allocation.time }}</td>
+              </tr>
+            {% endfor %}
+            </tbody>  
+          </table>
+          <form method="post" action="{% url 'fixAllocation' %}">
+            {% csrf_token %}
+            <button type="submit">Mail Teachers</button>
+          </form> 
+        </section>   
+    </body>  
+  

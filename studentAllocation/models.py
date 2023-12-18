@@ -18,4 +18,3 @@ class Student(models.Model):
 
     def __str__(self):
         return f"Student {self.roll_no} in {self.class_assigned}"
-
