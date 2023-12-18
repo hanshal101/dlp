@@ -23,4 +23,5 @@ urlpatterns = [
     path('entry/',include("timetable.urls")),
     path('stalloc/',include("studentAllocation.urls")),
     path('file/',include("paperupload.urls")),
+    path('dashboard/',include("teacherDashboard.urls")),
 ]

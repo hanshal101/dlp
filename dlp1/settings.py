@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'teacheralloc.apps.TeacherallocConfig',
     'student_data.apps.StudentDataConfig',
     'studentAllocation.apps.StudentallocationConfig',
-    'paperupload.apps.PaperuploadConfig'
+    'paperupload.apps.PaperuploadConfig',
+    'teacherDashboard.apps.TeacherdashboardConfig',
 ]
 
 MIDDLEWARE = [
