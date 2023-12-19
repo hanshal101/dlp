@@ -1,4 +1,28 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+  .gggg{
+    margin-top:25px;
+    bottom: 40px;
+    right: 40px;
+    background-color: black;
+    color: white;
+    padding: 1em;
+    border: none;
+    border-radius: 15px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: all .2s ease;
+    box-shadow: 2px 5px 10px black;
+}
+.gggg:active{
+    background-color: #951d2d;
+    transform: translateY(5px);
+    box-shadow: 0px 0px 10px black;
+}
+</style>
 <form method="post" action="{% url 'showStdAllocation' %}">
     {% csrf_token %}
-    <input type="submit" value="GENERATE">
-  </form>
+    <input class="gggg" type="submit" value="GENERATE">
+</form>
+{% endblock %}

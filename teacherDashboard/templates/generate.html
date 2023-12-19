@@ -1,0 +1,25 @@
+{% extends 'main.html' %}
+{% block content %}
+<style>
+    .gen-bocx{
+        text-decoration: none;
+        color: black;
+        padding: 1em;
+        font-size:1.3em;
+        box-shadow: 2px 2px 7px grey;  
+    }
+    .gen-box-div{
+        display:flex;
+        margin-top:1em;
+        gap:1em;
+    }
+</style>
+<div class="gen-box-div">
+    <a class="gen-bocx" href="/tt/generate-allocations/">Generate Allocation</a>
+    <a class="gen-bocx" href="/stdata/import-csv/">Import Student Data</a>
+    <a class="gen-bocx" href="/stalloc/generate-alloc/">Generate Student Allocation</a>
+    <a class="gen-bocx" href="/file/upload/">Uplaod papers</a>
+    <a class="gen-bocx" href="/dashboard/examAttendence/">Take Attendace</a>
+    <a class="gen-bocx" href="/dashboard/main/">Home</a>
+</div>
+{% endblock %}

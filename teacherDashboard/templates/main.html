@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body{
+        background: url(https://www.kjsieit.in/sims/images/main/back.jpg);
+    }
+
+    main {
+      display: flex;
+      box-sizing: border-box;
+    }
+
+    main .sidebar {
+      flex: 1;
+      background-color: black;
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    main .section1,
+    main .section2 {
+      display: flex;
+      flex-direction: column;
+      margin: 1em auto;
+      gap: 1em;
+      padding: 1.5em;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    main .section1 img,
+    main .section2 img {
+      max-width: 40px;
+      background-color: #fff;
+      filter: invert(100);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    main .section1 img:hover,
+    main .section2 img:hover {
+      transform: scale(1.1);
+    }
+
+    main .section1 img:active,
+    main .section2 img:active {
+      transform: scale(1);
+    }
+
+    main .main {
+      flex: 18;
+      display: flex;
+      box-sizing: border-box;
+      flex-direction: column;
+      height: 100vh;
+      
+      overflow-y: scroll;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    main .part2 {
+      background-color: rgb(253, 253, 253, 0);
+      width: 100%;
+      padding: 1em 2em;
+      box-sizing: border-box;
+    }
+
+    main .container {
+      width: 100%;
+      margin-bottom: 1em;
+    }
+  </style>
+
+  <body>
+    <main>
+      <div class="sidebar">
+        <div class="section1">
+          <a href="/dashboard/generateall/">
+            <img
+              src="https://toppng.com/uploads/preview/home-icon-home-house-icon-house-icon-free-11553508857ouiuhg9nsa.png"
+              alt="Home"
+              title="Home"
+            />
+          </a>
+          <a href="/entry/timetable/">
+            <img
+              src="https://icon-library.com/images/database-table-icon/database-table-icon-15.jpg"
+              alt="Time table"
+              title="Time table"
+            />
+          </a>
+          <a href="/tt/teacherAllocated/">
+            <img
+              src="https://th.bing.com/th/id/OIP.FN5KqiVd8ApcWsOL_vKo4gHaHa?rs=1&pid=ImgDetMain"
+              alt="Teacher allocation"
+              title="Teacher allocation"
+            />
+          </a>
+          <a href="/stdata/studentData/">
+            <img
+              src="https://th.bing.com/th/id/OIP.z0Ayksg6bM7NDaHWawUZbQHaHa?rs=1&pid=ImgDetMain"
+              alt="Students Data"
+              title="Students Data"
+            />
+          </a>
+          <a href="/stalloc/alloc/"
+            ><img
+              src="https://cdn-icons-png.flaticon.com/512/182/182330.png"
+              alt="Exam Dashboard"
+              title="Exam Dashboard"
+            />
+          </a>
+        </div>
+        <div class="section2">
+          <a href="/admin/"
+            ><img
+              src="https://www.pngkey.com/png/full/138-1387814_user-login-icon-png-access-icon-png.png"
+              alt="Account"
+              title="Account"
+            /> 
+          </a>
+          <a href="/admin/auth/user/">
+            <img
+              src="https://th.bing.com/th/id/R.387c9b29c36524791881ba399bd0cb3b?rik=Oe0PWrbo54%2fa%2fA&riu=http%3a%2f%2fdesignlooter.com%2fimages%2fdryad-svg-19.jpg&ehk=9ewVlbJ4qJFlNTH80uKVXq%2b7Xe2Mx%2fb58qHw8xo7ggY%3d&risl=&pid=ImgRaw&r=0"
+              alt="Settings"
+              title="Settings"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="main">
+        <div class="part2">
+          <div class="container">
+            {% block content %}
+            <h1>Welcome User</h1>
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
