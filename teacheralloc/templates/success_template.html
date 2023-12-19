@@ -1,0 +1,8 @@
+<!-- In your HTML template -->
+{% extends 'main.html' %}
+{% block content %}
+<form method="post" action="{% url 'generate_teacher_allocations' %}">
+    {% csrf_token %}
+    <input type="submit" value="GENERATE">
+</form>
+{% endblock %}
